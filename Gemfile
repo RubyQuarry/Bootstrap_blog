@@ -39,4 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass' # for using bootstrapstrap-rails"
+
+gem 'faker'
+
+gem 'will_paginate'
