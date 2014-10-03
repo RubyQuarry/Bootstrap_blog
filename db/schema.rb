@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002040835) do
+ActiveRecord::Schema.define(version: 20141003210702) do
 
   create_table "blogs", force: true do |t|
     t.text     "content"
     t.string   "author"
-    t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.text     "keywords"
   end
 
 end
