@@ -158,6 +158,11 @@ h6, .h6 {
 
 .blog-post {
     margin-bottom: 60px;
+
+  &:hover{
+    border-radius: 7px;
+    background: #B00100;
+  }
 }
 .blog-post-title {
     margin-bottom: 5px;
@@ -166,6 +171,14 @@ h6, .h6 {
 .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+}
+
+.summary-image.pull-right {
+  padding-left: 40px;
+}
+
+.summary-image.pull-left {
+  padding-right: 40px;
 }
 
 
