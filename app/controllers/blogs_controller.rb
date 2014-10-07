@@ -8,4 +8,8 @@ class BlogsController < ApplicationController
 
   def show
   end
+
+  def search
+    @blogs = Blog.search("#{params[:keyword]}")
+  end
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :blogs do
+    get 'search', :on => :collection
+  end
   root 'blogs#index'
+
 
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

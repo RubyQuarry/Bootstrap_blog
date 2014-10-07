@@ -39,8 +39,10 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem 'bootstrap-sass' # for using bootstrapstrap-rails"
+gem 'bootstrap-sass' # for using bootstrap-rails"
 
 gem 'faker'
 
 gem 'will_paginate'
+
+gem 'annotate', '~> 2.6.5'

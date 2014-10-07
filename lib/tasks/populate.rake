@@ -8,7 +8,7 @@ namespace :db do
       author:    Faker::Name.name,
       title:     Faker::Lorem.word,
       content:   Faker::Lorem.paragraph(3),
-      keywords: [Faker::Hacker.verb],
+      keywords: [Faker::Hacker.verb, "YOLO"],
       )
      end
     puts "blogs created"
