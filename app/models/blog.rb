@@ -12,13 +12,16 @@
 #
 
 class Blog < ActiveRecord::Base
+  before_save :set_keywords
   serialize :keywords, Array
 
-  scope :search, ->(keyword) { where("keywords LIKE ?", "%#{keyword}%") }
+  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%") }
 
-  #TODO: add validations
+  scope :inorder, -> { order('created_at DESC') }
 
-  before_save :set_keywords
+  scope :selectedMonth, ->(month) { find(:all, conditions: "") }
+
+  validates :title, :author, :content, presence: true
 
 
   def self.all_keywords
@@ -27,9 +30,23 @@ class Blog < ActiveRecord::Base
     end.uniq
   end
 
+  def self.archive_months
+    Blog.inorder.map do |b|
+      [b.created_at.month, b.created_at.year]
+    end.uniq
+  end
+
+  def year
+    created_at.year
+  end
+
+  def month
+    created_at.month
+  end
+
   protected
 
   def set_keywords
-    self.keywords.map(&:downcase)
+    self.keywords.map!(&:downcase)
   end
 end

@@ -46,3 +46,5 @@ gem 'faker'
 gem 'will_paginate'
 
 gem 'annotate', '~> 2.6.5'
+
+gem 'font-awesome-rails' # for using font-awesome icons
