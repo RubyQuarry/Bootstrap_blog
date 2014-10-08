@@ -171,24 +171,52 @@ h6, .h6 {
 .blog-post {
     padding: 10px;
     margin-bottom: 60px;
+  -webkit-animation: out 1s; /* Chrome, Safari, Opera */
+  animation: out 1s;
     &:hover{
       background: #def1f4;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
       border-radius: 10px; /* future proofing */
+      -webkit-animation: myfirst 1s; /* Chrome, Safari, Opera */
+      animation: myfirst 1s;
     }
+  
+  &:hover
 
   a{
     text-decoration: none;
    }
 
 }
+
+@-webkit-keyframes myfirst {
+  from {background: #ffffff;}
+  to {background: #def1f4;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  from {background: #ffffff;}
+  to {background: #def1f4;}
+}
+
+@-webkit-keyframes out {
+  from {background: #def1f4;}
+  to {background: #ffffff;}
+}
+
+/* Standard syntax */
+@keyframes out {
+  from {background: #def1f4;}
+  to {background: #ffffff;}
+}
+
 .blog-post-title {
     margin-bottom: 5px;
     font-size: 40px;
 }
 .blog-post-meta {
-    margin-bottom: 20px;
     color: #999;
 }
 
