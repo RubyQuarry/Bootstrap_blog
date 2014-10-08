@@ -9,5 +9,7 @@ class CreateComments < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index(:comments, :blog_id)
   end
 end

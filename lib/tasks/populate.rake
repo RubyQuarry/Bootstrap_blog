@@ -4,9 +4,6 @@ namespace :db do
     [Blog].each(&:delete_all)
 
      10.times do
-
-
-
       Blog.create!(
         author:    Faker::Name.name,
         title:     Faker::Lorem.word,
@@ -22,6 +19,6 @@ namespace :db do
         blog:  Blog.first
       )
      end
-    puts "blogs created"
+    puts "blogs and comments created"
   end
 end

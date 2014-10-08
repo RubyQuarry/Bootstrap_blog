@@ -32,4 +32,6 @@ ActiveRecord::Schema.define(version: 20141008013517) do
     t.datetime "updated_at"
   end
 
+  add_index "comments", ["blog_id"], name: "index_comments_on_blog_id"
+
 end
