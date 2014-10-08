@@ -15,12 +15,13 @@ class Blog < ActiveRecord::Base
   before_save :set_keywords
   serialize :keywords, Array
 
+  has_many :comments
+
   scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%") }
 
   scope :inorder, -> { order('created_at DESC') }
 
   validates :title, :author, :content, presence: true
-
 
   def self.all_keywords
     Blog.all.inject([]) do |n, m|
