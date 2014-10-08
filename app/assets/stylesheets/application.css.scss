@@ -71,7 +71,16 @@ h6, .h6 {
     padding: 10px;
     font-weight: 500;
     color: #cdddeb;
+    float: right;
+
+
 }
+
+.title-mahal{
+  float: left;
+}
+
+
 .blog-nav-item:hover,
 .blog-nav-item:focus {
     color: #fff;
@@ -108,7 +117,7 @@ h6, .h6 {
 .blog-title {
     margin-top: 30px;
     margin-bottom: 0;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: normal;
 }
 .blog-description {
@@ -128,7 +137,7 @@ h6, .h6 {
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
-    padding: 15px;
+    padding: 5px;
     margin: 0 -15px 15px;
 }
 .sidebar-module-inset {
@@ -170,6 +179,11 @@ h6, .h6 {
 .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+}
+
+.summary-image{
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .summary-image.pull-right {

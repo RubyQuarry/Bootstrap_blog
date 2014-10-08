@@ -37,20 +37,5 @@
       <!--</div>&lt;!&ndash; /.blog-post &ndash;&gt;-->
 
 
-      <% @blogs.each do |blog| %>
-        <div class="blog-post">
-          <img class="summary-image img-suqare img-responsive <%= cycle("pull-right", "pull-left") %>" alt="Bootstrap template" src="http://placehold.it/200x200"/>
-          <h2 class="blog-post-title"><%= blog.title %></h2>
-          <p class="blog-post-meta"><%= date_format(blog) %></p>
-          <!--<blockquote>-->
-            <!--<p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-          <!--</blockquote>-->
-          <p><%= truncate(blog.content, length: 100) %></p>
-          <% blog.keywords.each do |keyword| %>
-            <a href="<%= search_blogs_path(keyword: keyword) %>" class="label label-success"><%= keyword %></a>
-          <% end %>
-        </div><!-- /.blog-post -->
-    <% end %>
+    <%= render 'blogs/blogs' %>
 
-
-    <%= will_paginate @blogs %>

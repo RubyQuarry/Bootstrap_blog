@@ -19,8 +19,6 @@ class Blog < ActiveRecord::Base
 
   scope :inorder, -> { order('created_at DESC') }
 
-  scope :selectedMonth, ->(month) { find(:all, conditions: "") }
-
   validates :title, :author, :content, presence: true
 
 
@@ -34,14 +32,6 @@ class Blog < ActiveRecord::Base
     Blog.inorder.map do |b|
       [b.created_at.month, b.created_at.year]
     end.uniq
-  end
-
-  def year
-    created_at.year
-  end
-
-  def month
-    created_at.month
   end
 
   protected
