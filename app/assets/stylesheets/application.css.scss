@@ -167,9 +167,20 @@ h6, .h6 {
  * Blog posts
  */
 
-.blog-post {
-    margin-bottom: 60px;
 
+.blog-post {
+    padding: 10px;
+    margin-bottom: 60px;
+    &:hover{
+      background: #def1f4;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px; /* future proofing */
+    }
+
+  a{
+    text-decoration: none;
+   }
 
 }
 .blog-post-title {
@@ -179,6 +190,10 @@ h6, .h6 {
 .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+}
+
+.blog-post-story{
+  color: #0f0f0f;
 }
 
 .summary-image{

@@ -1,10 +1,11 @@
 <% @blogs.each do |blog| %>
   <div class="blog-post">
-    <img class="summary-image img-square img-responsive <%= cycle("pull-right", "pull-left") %>" alt="Bootstrap template" src="http://placehold.it/200x200"/>
     <a href="<%= blog_path(blog) %>">
+
+    <img  class="summary-image img-square img-responsive <%= cycle("pull-right", "pull-left") %>" alt="Bootstrap template" src="http://placehold.it/200x200"/>
       <h2 class="blog-post-title"><%= blog.title %></h2>
       <p class="blog-post-meta"><%= date_format(blog) %></p>
-      <p><%= truncate(blog.content, length: 100) %></p>
+      <p class="blog-post-story"><%= truncate(blog.content, length: 100) %></p>
     </a>
     <% blog.keywords.each do |keyword| %>
       <a href="<%= search_blogs_path(keyword: keyword) %>" class="label label-success"><%= keyword %></a>
