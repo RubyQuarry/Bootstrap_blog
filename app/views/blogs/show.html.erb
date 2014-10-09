@@ -3,3 +3,24 @@
      src="http://placehold.it/300x300"/>
 
 <p><%= @blog.content %></p>
+
+
+
+
+<h3>Leave a reply</h3>
+
+<% @blog.comments.each do |comment| %>
+ <p>
+   <%= comment.text %>
+ </p>
+
+<% end %>
+
+
+<%= form_for(Comment.new) do |f| %>
+
+
+
+
+  <%= f.submit %>
+<% end %>

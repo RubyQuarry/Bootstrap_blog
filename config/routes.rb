@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
+  get 'comments/update'
+
   resources :blogs do
     get 'search', :on => :collection
   end
+  resources :comments
   root 'blogs#index'
 
 
