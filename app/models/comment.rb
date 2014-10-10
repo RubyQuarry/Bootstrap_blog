@@ -15,4 +15,9 @@ class Comment < ActiveRecord::Base
   belongs_to :blog
 
   validates :name, :text, presence: true
+
+
+
+  scope :inorder, -> { order('created_at DESC') }
+
 end

@@ -4,5 +4,6 @@
   <% end %>
 <% else %>
   $('div#comments').append("<%= escape_javascript(render @comment) %>");
-  $('div#<%= dom_id(@comment) %>').effect('highlight');
+  $('div#<%= dom_id(@comment) %>').effect('highlight', {}, 2000);
+  $('form#new_comment').trigger("reset");
 <% end %>

@@ -7,7 +7,8 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    @comment = @blog.comments.build
+    @comment = Comment.new
+    @comments = @blog.comments.inorder
   end
 
   def search

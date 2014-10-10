@@ -4,26 +4,14 @@
 
 <p><%= @blog.content %></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <div id="comments">
-  <%= render @blog.comments %>
+<div id="comments">
+  <%= render @comments %>
 </div>
 
 <div class="well well-sm">
   <%= form_for([@blog, @comment], html: { class: "form-horizontal" }, remote: true) do |f| %>
     <fieldset>
-      <legend class="text-center header">Contact us</legend>
+      <legend class="text-center header">Comment</legend>
 
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
@@ -35,7 +23,7 @@
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
         <div class="col-md-8">
-          <%= f.text_field :email, placeholder: "Email Address", class:"form-control" %>
+          <%= f.text_field :email, placeholder: "Email Address (Not Required)", class:"form-control" %>
         </div>
       </div>
 

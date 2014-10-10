@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     @comment = @blog.comments.build(comment_params)
 
 
-
     respond_to do |format|
       if @comment.save
 
