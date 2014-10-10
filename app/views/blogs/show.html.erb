@@ -4,7 +4,19 @@
 
 <p><%= @blog.content %></p>
 
-<div id="comments">
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="comments">
   <%= render @blog.comments %>
 </div>
 
@@ -30,7 +42,7 @@
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
         <div class="col-md-8">
-          <%= f.text_area :text, placeholder: "Comment...", class: "form-control", rows: 7 %>
+          <%= f.text_area :text, placeholder: "Comment...", class: "form-control", rows: 5 %>
         </div>
       </div>
 

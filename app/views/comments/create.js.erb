@@ -1,1 +1,8 @@
-$('div#comments').append("<%= escape_javascript(render @comment) %>");
+<% if @comment.new_record? %>
+  <% @comment.errors.keys.each do |error| %>
+  $('#comment_<%= error %>').effect("highlight", { color: "red" }, 2000);
+  <% end %>
+<% else %>
+  $('div#comments').append("<%= escape_javascript(render @comment) %>");
+  $('div#<%= dom_id(@comment) %>').effect('highlight');
+<% end %>

@@ -13,4 +13,6 @@
 
 class Comment < ActiveRecord::Base
   belongs_to :blog
+
+  validates :name, :text, presence: true
 end
