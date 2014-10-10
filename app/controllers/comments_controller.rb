@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
   def update
   end
 
-
   private
 
   def comment_params

@@ -48,3 +48,21 @@ gem 'will_paginate'
 gem 'annotate', '~> 2.6.5'
 
 gem 'font-awesome-rails' # for using font-awesome icons
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails', '4.2.0'
+end
+
+group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'rspec-rails'
+end
