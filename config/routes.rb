@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-
-  get 'comments/update'
+  root 'blogs#index'
 
   resources :blogs do
     get 'search', :on => :collection
+    resources :comments
   end
-  resources :comments
-  root 'blogs#index'
+
 
 
   match '/about',   to: 'static_pages#about',   via: 'get'
