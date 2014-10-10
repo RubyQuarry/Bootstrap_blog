@@ -19,7 +19,7 @@ class Blog < ActiveRecord::Base
 
   scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%") }
 
-  scope :inorder, -> { order('created_at DESC') }
+  scope :inorder, -> { order('created_at DESC') }  # inorder
 
   validates :title, :author, :content, presence: true
 

@@ -4,19 +4,12 @@
 
 <p><%= @blog.content %></p>
 
-
-
-<% @blog.comments.each do |comment| %>
- <p>
-   <%= comment.text %>
- </p>
-<% end %>
-
-
-
+<div id="comments">
+  <%= render @blog.comments %>
+</div>
 
 <div class="well well-sm">
-  <%= form_for([@blog, @comment], html: { class: "form-horizontal" }) do |f| %>
+  <%= form_for([@blog, @comment], html: { class: "form-horizontal" }, remote: true) do |f| %>
     <fieldset>
       <legend class="text-center header">Contact us</legend>
 
