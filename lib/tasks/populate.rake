@@ -8,8 +8,9 @@ namespace :db do
         author:    Faker::Name.name,
         title:     Faker::Lorem.word,
         content:   "#Welcome \n You can use  __markdown language__ to make notes and share with classmates\n\n1. You can also create links.  Click [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to see a markdown cheat sheet \n2. You can make awesome code samples like this:\n\n```python\ns = 'Python syntax highlighting'\nprint s\n```\n You can also make awesome tables:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
-        keywords: [Faker::Hacker.verb, "YOLO"],
+        keywords: "runner,YOLO",
         created_at: rand(2.year).ago,
+        published: true
       )
 
 

@@ -1,8 +1,11 @@
 class BlogsController < ApplicationController
 
-  before_action :sort_blogs, only: [:search, :index]
+  before_action :sort_blogs, only: [:search]
 
   def index
+    if admin_signed_in?
+      @blogs = Blog.all.order('created_at DESC').paginate(page: params[:page], per_page: 4)
+    end
   end
 
   def show
@@ -42,7 +45,7 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:author, :content, :title)
+    params.require(:blog).permit(:author, :content, :title, :keywords, :published)
   end
 
 end

@@ -12,14 +12,14 @@
 #
 
 class Blog < ActiveRecord::Base
-  before_save :set_keywords
+  before_validation :update_keywords
   serialize :keywords, Array
 
   has_many :comments
 
-  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%") }
+  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%").where(published: true) }
 
-  scope :inorder, -> { order('created_at DESC') }  # inorder
+  scope :inorder, -> { order('created_at DESC').where(published: true) }  # inorder
 
   validates :title, :author, :content, presence: true
 
@@ -35,9 +35,14 @@ class Blog < ActiveRecord::Base
     end.uniq
   end
 
+
   protected
 
-  def set_keywords
-    self.keywords.split(",")
+  def update_keywords
+    if keywords_changed? and keywords.is_a?(String)
+      self.keywords = self.keywords.split(',').collect(&:strip).map do |key|
+        key.scan(/[a-zA-Z]/).join
+      end
+    end
   end
 end

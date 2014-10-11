@@ -13,4 +13,6 @@ RSpec.describe Blog, :type => :model do
     expect(blog_error).to_not be_valid
   end
 
+
+
 end

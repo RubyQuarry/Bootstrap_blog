@@ -1,7 +1,10 @@
 <% @blogs.each do |blog| %>
 
   <% if admin_signed_in? %>
-    <a class="blog-nav-item" href="<%= edit_blog_path(blog) %>">Edit</a>
+    <a class="label label-danger" href="<%= edit_blog_path(blog) %>">Edit</a>
+    <% unless blog.published? %>
+      <a class="label label-danger">NOT PUBLISHED</a>
+    <% end %>
   <% end  %>
   <div class="blog-post">
 
