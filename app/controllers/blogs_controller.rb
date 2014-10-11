@@ -20,10 +20,29 @@ class BlogsController < ApplicationController
     end
   end
 
+
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+
+
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      redirect_to :action => 'show', :id => @blog
+    else
+      render :back
+    end
+  end
+
   private
 
   def sort_blogs
     @blogs = Blog.inorder.paginate(page: params[:page], per_page: 4)
+  end
+
+  def blog_params
+    params.require(:blog).permit(:author, :content, :title)
   end
 
 end

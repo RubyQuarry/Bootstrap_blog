@@ -1,5 +1,10 @@
 <% @blogs.each do |blog| %>
+
+  <% if admin_signed_in? %>
+    <a class="blog-nav-item" href="<%= edit_blog_path(blog) %>">Edit</a>
+  <% end  %>
   <div class="blog-post">
+
     <a href="<%= blog_path(blog) %>">
 
     <img  class="summary-image img-square img-responsive <%= cycle("pull-right", "pull-left") %>" alt="Bootstrap template" src="http://placehold.it/200x200"/>
@@ -10,6 +15,7 @@
     <% blog.keywords.each do |keyword| %>
       <a href="<%= search_blogs_path(keyword: keyword) %>" class="label label-success"><%= keyword %></a>
     <% end %>
+
   </div><!-- /.blog-post -->
 <% end %>
 

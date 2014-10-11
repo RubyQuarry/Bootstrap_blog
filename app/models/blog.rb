@@ -38,6 +38,6 @@ class Blog < ActiveRecord::Base
   protected
 
   def set_keywords
-    self.keywords.map!(&:downcase)
+    self.keywords.split(",")
   end
 end
