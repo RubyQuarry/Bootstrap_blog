@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, only: :sessions
   devise_scope :admin do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'

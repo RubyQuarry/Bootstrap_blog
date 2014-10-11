@@ -1,7 +1,7 @@
 namespace :db do
   desc "Erase and fill database"
   task :populate => :environment do
-    [Blog, Comment].each(&:delete_all)
+    [Blog, Comment, Admin].each(&:delete_all)
 
      10.times do
       b = Blog.create!(
@@ -21,6 +21,9 @@ namespace :db do
         blog:  b
       )
      end
+
+    Admin.create!(:email => 'test@example.com', :password => 'password', :password_confirmation => 'password')
+
     puts "blogs and comments created"
   end
 end
