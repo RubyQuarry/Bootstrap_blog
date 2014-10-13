@@ -24,7 +24,7 @@ class Blog < ActiveRecord::Base
   validates :title, :author, :content, presence: true
 
   def self.all_keywords
-    Blog.all.inject([]) do |n, m|
+    Blog.inorder.inject([]) do |n, m|
       n.concat(m.keywords)
     end.uniq
   end
