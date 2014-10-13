@@ -2,6 +2,7 @@
 
   <% if admin_signed_in? %>
     <a class="label label-danger" href="<%= edit_blog_path(blog) %>">Edit</a>
+    <%= link_to "Destroy", blog, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure' } %>
     <% unless blog.published? %>
       <a class="label label-danger">NOT PUBLISHED</a>
     <% end %>

@@ -10,6 +10,10 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
 
   <div class="blog-header">
     <h1 class="blog-title">Welcome to the 'AJ' mahal</h1>
@@ -27,6 +31,7 @@
 
 </div><!-- /.container -->
 
+<%= debug(params) if Rails.env.development? %>
 
 <%= render 'layouts/footer' %>
 </body>

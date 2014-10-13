@@ -15,7 +15,7 @@ class Blog < ActiveRecord::Base
   before_validation :update_keywords
   serialize :keywords, Array
 
-  has_many :comments
+  has_many :comments, dependent: :destroy #destroy comments on blog destroy
 
   scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%").where(published: true) }
 

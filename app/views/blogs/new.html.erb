@@ -1,9 +1,10 @@
+
 <% if admin_signed_in? %>
   <%= form_for(@blog, html: { class: "form-horizontal" }) do |f| %>
 
     <%= f.text_field :author, placeholder: "Author*", class: "form-control" %>
 
-    <%= f.text_field :title, placeholder: "Name*", class: "form-control" %>
+    <%= f.text_field :title, placeholder: "Title*", class: "form-control" %>
 
     <%= f.text_field :keywords, placeholder: "Email (Only seen by me)", class:"form-control" %>
 
@@ -13,5 +14,4 @@
 
     <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
   <% end %>
-
 <% end %>
