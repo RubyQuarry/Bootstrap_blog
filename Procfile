@@ -1,0 +1,2 @@
+worker: bin/sidekiq
+

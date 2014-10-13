@@ -58,6 +58,8 @@ gem 'coderay', '~> 1.1.0' # For nice code snippets
 
 gem 'devise'
 
+gem 'sidekiq'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
