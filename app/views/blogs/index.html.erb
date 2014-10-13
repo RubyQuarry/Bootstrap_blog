@@ -1,4 +1,7 @@
-<a class="label label-danger" href="<%= new_blog_path %>">New Blog</a>
+
+<% if admin_signed_in? %>
+  <a class="label label-danger" href="<%= new_blog_path %>">New Blog</a>
+<% end %>
 
 <%= render 'blogs/blogs' %>
 

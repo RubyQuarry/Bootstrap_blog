@@ -1,6 +1,6 @@
 class DeleteTagsFromBlogs < ActiveRecord::Migration
   def change
-    remove_column(:blogs, :tags)
+    remove_column(:blogs, :tags, :string)
   end
 
 

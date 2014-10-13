@@ -21,6 +21,8 @@ class BlogsController < ApplicationController
       month = Date.new(params[:year].to_i, params[:month].to_i)
       @blogs = @blogs.where(created_at: month.all_month)
     end
+
+    render :index
   end
 
 
@@ -61,6 +63,7 @@ class BlogsController < ApplicationController
       redirect_to :back
     else
       flash[:danger] = "deletion FAILED"
+      redirect_to :back
     end
 
   end
