@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'comments/create'
+
   devise_for :admins, only: :sessions
   devise_scope :admin do
     get '/login' => 'devise/sessions#new'
