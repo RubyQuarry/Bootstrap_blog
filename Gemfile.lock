@@ -258,9 +258,9 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   meta_request
-  pg (= 0.15.1)
+  pg
   rails (= 4.1.4)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   redcarpet (~> 2.1.1)
   rspec-rails
   sass-rails (~> 4.0.3)
