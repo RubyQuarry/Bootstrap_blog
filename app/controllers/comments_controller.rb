@@ -5,9 +5,7 @@ class CommentsController < ApplicationController
 
 
     respond_to do |format|
-      if @comment.save
-
-      end
+      @comment.save
       format.js
     end
   end
@@ -15,6 +13,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text, :name, :email)
+    params.require(:comment).permit(:text, :name, :email, :feeling)
   end
 end

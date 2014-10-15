@@ -6,12 +6,12 @@
         <div class="message-head clearfix">
           <div class="avatar pull-left"><a> <%= gravatar_for(comment) %></a></div>
           <div class="user-detail">
-            <h5 class="handle"><%= comment.name %></h5>
+            <h5 class="handle"><%= comment.name %> </h5>
             <div class="post-meta">
               <div class="asker-meta">
                 <span class="qa-message-what"></span>
 											<span class="qa-message-when">
-												<span class="qa-message-when-data"><%= date_format comment %></span>
+												<span class="qa-message-when-data"><%= comment.feeling %> on <%= date_format comment %></span>
 											</span>
               </div>
             </div>

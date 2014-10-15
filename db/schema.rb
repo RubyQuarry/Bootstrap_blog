@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011181647) do
+ActiveRecord::Schema.define(version: 20141015060907) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141011181647) do
     t.integer  "blog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "feeling",    default: "Hasta la vista, baby"
   end
 
   add_index "comments", ["blog_id"], name: "index_comments_on_blog_id"
