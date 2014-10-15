@@ -28,8 +28,7 @@
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-heart-o fa-2x bigicon"></i></span>
         <div class="col-md-8">
-          <%= f.select :feeling, [['Hasta la vista, baby'], ['Love is where the heart is'],['I did it for me, I liked it.'], ['Frankly my dear, I don\'t give a damn'],
-                                  ['I got nothing to say']], prompt: "Got emotion?" %>
+          <%= f.select :feeling, %w(normal lovely caring angry crying inappropriate disgusting), prompt: "Got emotion?" %>
         </div>
       </div>
 
