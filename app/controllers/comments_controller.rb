@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(comment_params)
 
-
     respond_to do |format|
       @comment.save
       format.js
