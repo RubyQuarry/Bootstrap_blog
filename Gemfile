@@ -49,7 +49,7 @@ gem 'will_paginate'
 
 gem 'annotate', '~> 2.6.5'
 
-gem 'font-awesome-rails' # for using font-awesome icons
+gem 'font-awesome-sass' # for using font-awesome icons
 
 gem 'redcarpet', '~> 2.1.1'
 gem 'coderay', '~> 1.1.0' # For nice code snippets
