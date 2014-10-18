@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       @comment.save
-      format.js
+      format.html { render 'blogs/show' }
+      format.json { render json @comment }
+      format.js {}
     end
   end
 

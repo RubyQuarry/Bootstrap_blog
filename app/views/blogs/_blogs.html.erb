@@ -10,7 +10,6 @@
   <div class="blog-post">
 
     <a href="<%= blog_path(blog) %>">
-
      <h2 class="blog-post-title"><%= blog.title %></h2>
       <p class="blog-post-meta"><%= date_format(blog) %></p>
       <p class="blog-post-story"><%= markdown truncate(blog.content, length: 100) %></p>
