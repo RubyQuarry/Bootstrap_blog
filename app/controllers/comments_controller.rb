@@ -2,12 +2,11 @@ class CommentsController < ApplicationController
   def create
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(comment_params)
-
+    @comment.save
     respond_to do |format|
-      @comment.save
+
       format.html { render 'blogs/show' }
-      format.json { render json @comment }
-      format.js {}
+      format.js
     end
   end
 

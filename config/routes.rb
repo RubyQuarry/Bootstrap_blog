@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  root 'blogs#index'
+
   get 'comments/create'
 
   devise_for :admins, only: :sessions
@@ -7,8 +10,6 @@ Rails.application.routes.draw do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
   end
-
-  root 'blogs#index'
 
   resources :blogs do
     get 'search', :on => :collection
