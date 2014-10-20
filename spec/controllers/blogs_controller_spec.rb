@@ -13,13 +13,13 @@ RSpec.describe BlogsController, :type => :controller do
                              title:      "hello, world",
                              content:    "#Welcome ",
                              keywords:   "runner,YOLO",
-                             created_at: Date.new(2014,8,3),
+                             created_at: Date.new(2014, 8, 3),
                              published:  true)
       @blog2 = Blog.create!( author:     "aj",
                              title:      "hello, world",
                              content:    "#Welcome ",
                              keywords:   "runner",
-                             created_at: Date.new(2014,8,4),
+                             created_at: Date.new(2014, 8, 4),
                              published:  true)
       get :index
       expect(assigns(:blogs)).to match_array([@blog, @blog2])
