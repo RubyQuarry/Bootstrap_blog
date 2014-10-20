@@ -15,7 +15,7 @@ RSpec.describe CommentsController, :type => :controller do
                            published:  true)
       visit blog_path(@blog)
 
-      fill_in('comment_email', :with => 'John')
+      fill_in('comment_email', :with => 'John@email.com')
       fill_in('comment_name',  :with => 'John')
     end
 
