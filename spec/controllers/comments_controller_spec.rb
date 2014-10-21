@@ -7,12 +7,7 @@ RSpec.describe CommentsController, :type => :controller do
   describe 'Submit comment' do
 
     before :each do
-      @blog = Blog.create!(author:     "aj",
-                           title:      "hello, world",
-                           content:    "#Welcome ",
-                           keywords:   "runner,YOLO",
-                           created_at: 5.seconds.ago,
-                           published:  true)
+      @blog = FactoryGirl.create(:blog)
       visit blog_path(@blog)
 
       fill_in('comment_email', :with => 'John@email.com')
@@ -21,7 +16,7 @@ RSpec.describe CommentsController, :type => :controller do
 
     it 'should be successful' do
       expect(@blog.comments.count).to eq(0)
-      fill_in('comment_text',  :with => 'Comment')
+      fill_in('comment_text', :with => 'Comment')
       page.has_content?('Submit comment')
       expect{ click_on('Submit') }.to change(@blog.comments, :count).by(1)
     end
