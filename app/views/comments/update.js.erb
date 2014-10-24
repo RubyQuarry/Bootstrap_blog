@@ -1,0 +1,4 @@
+var num = +$('div#<%= dom_id(@comment) %> #comment-vote').text();
+num += 1;
+$('div#<%= dom_id(@comment) %> #comment-vote').text(num);
+$('div#<%= dom_id(@comment) %> .like').hide();
