@@ -21,7 +21,7 @@ FactoryGirl.define do
   end
 
   factory :blog_error, class: Blog do |f|
-    f.author  { Faker::Name.first_name }
-    f.title   { Faker::Name.last_name }
+    f.author  { "Blog error" }
+    f.title   { "Fake title" }
   end
 end

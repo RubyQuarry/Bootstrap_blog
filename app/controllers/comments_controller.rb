@@ -4,14 +4,12 @@ class CommentsController < ApplicationController
     @comment = @blog.comments.build(comment_params)
     @comment.save
     respond_to do |format|
-
       format.html { render 'blogs/show' }
       format.js
     end
   end
 
   def update
-
     @comment = Comment.find(params[:id])
     @comment.increment!(:vote)
 

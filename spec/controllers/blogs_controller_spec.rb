@@ -5,9 +5,8 @@ RSpec.describe BlogsController, :type => :controller do
 
   include Devise::TestHelpers # add authentication to tests
 
-  subject { page }
-
   describe "keyword search" do
+    Blog.destroy_all
     let(:blog) { FactoryGirl.create(:blog) }
     let(:blog2) { FactoryGirl.create(:sept_blog) }
 
