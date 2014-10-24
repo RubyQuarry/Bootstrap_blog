@@ -1,1 +1,1 @@
-My blog, built with rails 4 in the front and copied Bootstrap 3 courtesy of [@mdo](https://twitter.com/mdo).
+My blog, built with rails 4 by me in the back and copied Bootstrap 3 in the front courtesy of [@mdo](https://twitter.com/mdo).
