@@ -18,6 +18,7 @@ namespace :db do
         text:  Faker::Lorem.paragraph(3),
         name:  Faker::Name.name,
         created_at: rand(2.year).ago,
+        vote: rand(10),
         blog:  b
       )
      end

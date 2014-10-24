@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'blogs#index'
 
   get 'comments/create'
+  get 'comments/like'
 
+  resources :comments
   devise_for :admins, only: :sessions
   devise_scope :admin do
     get '/login' => 'devise/sessions#new'

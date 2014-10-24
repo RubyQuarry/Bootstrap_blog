@@ -6,7 +6,15 @@
         <div class="message-head clearfix">
           <div class="avatar pull-left"><a> <%= gravatar_for(comment) %></a></div>
           <div class="user-detail">
-            <h5 class="handle"><%= comment.name %> </h5>
+            <h5 class="handle"><%= comment.name %>
+              <div id="like-icons">
+                <%= link_to "", comment, method: :patch, class: 'fa fa-thumbs-o-up' %>
+                <!--<a class="fa fa-thumbs-o-down">-->
+                  <span id="comment-vote"><%= comment.vote %></span>
+                </a>
+
+              </div>
+            </h5>
             <div class="post-meta">
               <div class="asker-meta">
                 <span class="qa-message-what"></span>
@@ -23,7 +31,5 @@
       </div>
     </div>
   </div>
-
-
 <% end %>
 

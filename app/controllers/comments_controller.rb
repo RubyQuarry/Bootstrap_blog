@@ -10,9 +10,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+
+    @comment = Comment.find(params[:id])
+    @comment.increment!(:vote)
+
+    respond_to do |format|
+      format.html { render 'blogs/show' }
+      format.js
+    end
+  end
+
   private
 
   def comment_params
-    params.require(:comment).permit(:text, :name, :email, :feeling)
+    params.require(:comment).permit(:text, :name, :email, :feeling, :vote)
   end
 end
