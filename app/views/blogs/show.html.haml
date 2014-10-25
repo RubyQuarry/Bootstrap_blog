@@ -1,0 +1,8 @@
+%h1= @blog.title
+
+%p= markdown @blog.content
+
+%div#comments
+  = render @comments
+
+= render  partial: 'comments/commentForms'
