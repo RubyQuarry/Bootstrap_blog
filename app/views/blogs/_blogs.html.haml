@@ -1,0 +1,15 @@
+-@blogs.each do |blog|
+  =if admin_signed_in?
+    %a.label.label-danger{ href: "#{edit_blog_path(blog)}"} Edit
+    = link_to "Destroy", blog, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure' }
+    - unless blog.published?
+      %a.label.label-danger NOT PUBLISHED
+  .blog-post
+    %a{ href: "#{blog_path(blog)}" }
+      %h2.blog-post-title= blog.title
+      %p.blog-post-meta= date_format(blog)
+      %p.blog-post-story= markdown(truncate(blog.content, length: 100))
+      - blog.keywords.each do |keyword|
+        %a.label.label-success{ href: "#{ search_blogs_path(keyword: keyword) }"}= keyword
+
+= will_paginate @blogs

@@ -1,0 +1,23 @@
+= div_for(comment) do
+  %div.qa-message-list#wallmessages
+    %div.message-item#m16
+      %div.message-inner
+        %div.message-head.clearfix
+          %div.avatar.pull-left
+            %a= gravatar_for(comment)
+          %div.user-detail
+            %h5.handle
+              = comment.name
+              %div#like-icons
+                %span#comment-vote= comment.vote
+                = link_to '', comment, method: :patch, class: 'fa fa-thumbs-o-up like', remote: true
+                -#<!--<%= link_to '', comment, method: :patch, class: 'fa fa-thumbs-o-up like', remote: true %>-->
+                -if admin_signed_in?
+                  =link_to "Destroy", comment, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' }
+          %div.post-meta
+            %div.asker-meta
+              %span.qa-message-what
+              %span.qa-message-when
+                %span.qa-message-when-data= "#{comment.feeling} on #{date_format comment}"
+        %div.qa-message-content
+          = comment.text

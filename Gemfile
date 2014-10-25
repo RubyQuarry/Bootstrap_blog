@@ -40,7 +40,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
 gem 'bootstrap-sass' # for using bootstrap-rails"
 
 gem 'faker'
@@ -59,6 +58,8 @@ gem 'devise'
 
 gem 'sidekiq'
 
+gem 'haml-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -73,7 +74,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  # Use sqlite3 as the database for Active Record
+  # Use sqlite3 as the database for Active Record in testing
   gem 'sqlite3'
 end
 
