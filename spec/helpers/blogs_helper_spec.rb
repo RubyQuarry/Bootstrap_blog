@@ -11,5 +11,14 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe BlogsHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "date helper" do
+    it "should return formatted date" do
+      expect(helper.date_format(FactoryGirl.create(:blog))).to eq("Sunday, August 3rd 2014")
+    end
+
+    it "should return formatted month" do
+      expect(helper.month_year_convertor([1, 2014])).to eq("January 2014")
+    end
+  end
 end

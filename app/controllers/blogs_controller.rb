@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @blog.comments.inorder
+    @comments = @blog.comments.favorites
   end
 
   def search
@@ -25,10 +25,8 @@ class BlogsController < ApplicationController
     render :index
   end
 
-
   def edit
   end
-
 
   def update
     if @blog.update(blog_params)
@@ -39,7 +37,6 @@ class BlogsController < ApplicationController
       redirect_to :back
     end
   end
-
 
   def new
     @blog = Blog.new
@@ -65,7 +62,6 @@ class BlogsController < ApplicationController
       flash[:danger] = "deletion FAILED"
       redirect_to :back
     end
-
   end
 
   private

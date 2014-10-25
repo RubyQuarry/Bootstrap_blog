@@ -16,8 +16,5 @@ class Comment < ActiveRecord::Base
 
   validates :name, :text, presence: true
 
-
-
-  scope :inorder, -> { order('created_at DESC') }
-
+  scope :favorites, -> { order('vote DESC, created_at DESC') }
 end

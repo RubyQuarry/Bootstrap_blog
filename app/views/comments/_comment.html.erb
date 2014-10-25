@@ -9,7 +9,10 @@
               <div id="like-icons">
                 <span id="comment-vote"><%= comment.vote %></span>
                 <%= link_to '', comment, method: :patch, class: 'fa fa-thumbs-o-up like', remote: true %>
-                <!--<a class="fa fa-thumbs-o-down">-->
+                <!--<%= link_to '', comment, method: :patch, class: 'fa fa-thumbs-o-up like', remote: true %>-->
+                <% if admin_signed_in? %>
+                  <%= link_to "Destroy", comment, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </h5>
             <div class="post-meta">
