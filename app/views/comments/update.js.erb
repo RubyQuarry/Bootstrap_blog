@@ -1,4 +1,4 @@
-var dom_id = '<%= dom_id(@comment) %>'
+var dom_id = '<%= dom_id(@comment) %>';
 var num = +$('div#'+ dom_id + ' #comment-vote').text();
 num += 1;
 $('div#' + dom_id + ' #comment-vote').text(num);
