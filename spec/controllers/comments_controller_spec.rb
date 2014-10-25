@@ -41,10 +41,14 @@ RSpec.describe CommentsController, :type => :controller do
 
     it 'should by successful' do
       expect(page).to have_css('.like')
-      expect(page).to_not have_content('1 Like')
-      click_on('Like')
+      within('#comment-vote') do
+        expect(page).to_not have_content('1')
+      end
+      find('.like').click
       visit blog_path(@blog)
-      expect(page).to have_content('1 Like')
+      within('#comment-vote') do
+        expect(page).to_not have_content('2')
+      end
     end
 
   end
