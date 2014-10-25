@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title The AJ mahal
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render 'layouts/header'
+    .container
+      - flash.each do |key, value|
+        %div{:class => "alert alert-#{key}"}= value
+      .blog-header
+        %h1.blog-title Welcome to the 'AJ' mahal
+        %p.lead.blog-description A.J's official blog
+      .row
+        .col-sm-8.blog-main
+          = yield
+        / /.blog-main
+        = render 'layouts/sidebar'
+      / /.row
+    / /.container
+    = debug(params) if Rails.env.development?
+    = render 'layouts/footer'

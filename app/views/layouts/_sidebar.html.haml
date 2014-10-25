@@ -1,0 +1,26 @@
+%div.col-sm-3.col-sm-offset-1.blog-sidebar
+  %div.sidebar-module.sidebar-module-inset
+    %h4 About A.J Norton
+    %p I have no idea what I am doing and I love it.
+
+  %div.sidebar-module
+    %h4 Elsewhere
+    %ol.list-unstyled
+      %li
+        %a{ href: "https://github.com/ajn123" }
+          %i.fa.fa-github-alt.fa-2x Github
+      %li
+        %a{ href: "https://www.youtube.com/user/AppleJuiceScholars" }
+          %i.fa.fa-youtube-play.fa-2x Youtube
+
+  %div.sidebar-module
+    %h4 Tags
+    %ol.list-unstyled
+    - Blog.all_keywords.each do |keyword|
+      %a.label.label-success{ href: "#{ search_blogs_path(keyword: keyword) }" }= keyword
+
+  %div.sidebar-module
+    %h4 Archives
+    %ol.list-unstyled
+    - Blog.archive_months.each do |date|
+      %li=link_to( month_year_convertor(date), search_blogs_path(month: date[0], year: date[1]))

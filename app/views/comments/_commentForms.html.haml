@@ -1,0 +1,36 @@
+%div.well.well-sm
+  =form_for([@blog, @comment], html: { class: "form-horizontal" }, remote: true) do |f|
+    %fieldset
+      %legend.text-center.header Comment
+
+      %div.form-group
+        %span.col-md-1.col-md-offset-2.text-center
+          %i.fa.fa-user.bigicon
+        %div.col-md-8
+          = f.text_field :name, placeholder: "Name* - What your friends call you", class: "form-control"
+
+      %div.form-group
+        %span.col-md-1.col-md-offset-2.text-center
+          %i.fa.fa-envelope-o.bigicon
+        %div.col-md-8
+          = f.text_field :email, placeholder: "Email - Where you can be reached, only seen by me", class:"form-control"
+
+      %div.form-group
+        %span.col-md-1.col-md-offset-2.text-center
+          %i.fa.fa-pencil-square-o.bigicon
+        %div.col-md-8
+          = f.text_area :text, placeholder: "Comment* - Your insights, feelings, and arguments", class: "form-control", rows: 5
+
+      %div.form-group
+        %span.col-md-1.col-md-offset-2.text-center
+          %i.fa.fa-heart-o.fa-2x.bigicon
+        %div.col-md-8
+          = f.select :feeling, %w(normal lovely caring angry crying inappropriate disgusting), prompt: "Got emotion?"
+
+      %div.form-group
+        %div.col-md-12.text-center
+          * = Required
+
+      %div.form-group
+        %div.col-md-12.text-center
+          = f.submit "Submit", class: "btn btn-primary btn-lg"
