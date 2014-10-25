@@ -6,9 +6,12 @@
       %a.label.label-danger NOT PUBLISHED
   .blog-post
     %a{ href: "#{blog_path(blog)}" }
-      %h2.blog-post-title= blog.title
-      %p.blog-post-meta= date_format(blog)
-      %p.blog-post-story= markdown(truncate(blog.content, length: 100))
+      %h2.blog-post-title
+        = blog.title
+      %p.blog-post-meta
+        = date_format(blog)
+      %p.blog-post-story
+        = markdown(truncate(blog.content, length: 100))
       - blog.keywords.each do |keyword|
         %a.label.label-success{ href: "#{ search_blogs_path(keyword: keyword) }"}= keyword
 
