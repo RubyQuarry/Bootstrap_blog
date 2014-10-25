@@ -1,6 +1,6 @@
 
 - if admin_signed_in?
-  %a class="label label-danger" href="<%= new_blog_path %>">New Blog</a>
+  %a.label.label-danger{href: "#{new_blog_path}" }New Blog
 
 = render 'blogs/blogs'
 
