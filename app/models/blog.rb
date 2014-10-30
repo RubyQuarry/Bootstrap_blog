@@ -13,6 +13,7 @@
 
 class Blog < ActiveRecord::Base
   before_validation :update_keywords
+
   serialize :keywords, Array
 
   has_many :comments, dependent: :destroy #destroy comments on blog destroy
@@ -23,18 +24,23 @@ class Blog < ActiveRecord::Base
 
   validates :title, :author, :content, presence: true
 
-  def self.all_keywords
-    Blog.inorder.inject([]) do |n, m|
-      n.concat(m.keywords)
-    end.uniq
-  end
 
-  def self.archive_months
-    Blog.inorder.map do |b|
-      [b.created_at.month, b.created_at.year]
-    end.uniq
-  end
+  # class methods
+  class << self
 
+    def all_keywords
+      Blog.inorder.inject([]) do |n, m|
+        n.concat(m.keywords)
+      end.uniq
+    end
+
+    def archive_months
+      Blog.inorder.map do |b|
+        [b.created_at.month, b.created_at.year]
+      end.uniq
+    end
+
+  end
 
   protected
 

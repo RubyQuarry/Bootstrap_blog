@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+
     redirect_to :back
   end
 

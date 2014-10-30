@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :sort_blogs, only: [:index, :search]
-  before_action :find_blog, only: [:edit, :update, :show, :destroy]
+  before_action :find_blog, only:  [:edit, :update, :show, :destroy]
 
   def index
     if admin_signed_in?
