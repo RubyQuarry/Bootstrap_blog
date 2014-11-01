@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
 
   def update
     @comment.increment!(:vote)
-
     respond_to do |format|
       format.html { render 'blogs/show' }
       format.js
@@ -25,7 +24,6 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-
     redirect_to :back
   end
 

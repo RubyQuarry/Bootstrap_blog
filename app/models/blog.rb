@@ -18,9 +18,13 @@ class Blog < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy #destroy comments on blog destroy
 
-  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%").where(published: true) }
+  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%").published }
 
-  scope :inorder, -> { order('created_at DESC').where(published: true) }  # inorder
+  scope :published, -> { where(published: true) }
+
+  scope :inorder, -> { order('created_at DESC').published }  # inorder
+
+  scope :monthly, ->(month) { where(created_at: month.all_month) }
 
   validates :title, :author, :content, presence: true
 

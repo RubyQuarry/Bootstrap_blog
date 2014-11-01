@@ -7,6 +7,11 @@ RSpec.describe Blog, :type => :model do
     expect(FactoryGirl.build(:blog_error)).to_not be_valid
   end
 
+  describe "deletion" do
+
+
+  end
+
 
 end
 

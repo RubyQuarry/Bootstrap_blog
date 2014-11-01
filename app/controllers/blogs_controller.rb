@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
       @blogs = @blogs.search(params[:keyword])
     elsif params[:month] && params[:year]   # archive query
       month = Date.new(params[:year].to_i, params[:month].to_i)
-      @blogs = @blogs.where(created_at: month.all_month)
+      @blogs = @blogs.monthly
     end
 
     render :index
