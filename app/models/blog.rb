@@ -18,11 +18,11 @@ class Blog < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy #destroy comments on blog destroy
 
-  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%").published }
+  scope :search, -> (keyword) { where("keywords LIKE ?", "%#{keyword}%") }
 
   scope :published, -> { where(published: true) }
 
-  scope :inorder, -> { order('created_at DESC').published }  # inorder
+  scope :inorder, -> { order('created_at DESC') }  # inorder
 
   scope :monthly, ->(month) { where(created_at: month.all_month) }
 

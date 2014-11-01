@@ -20,6 +20,16 @@ FactoryGirl.define do
     f.published  true
   end
 
+  factory :unpublished_blog, class: Blog do |f|
+    f.author     "aj"
+    f.title      "hello, world"
+    f.content    "#Welcome "
+    f.keywords   "runner,sea"
+    f.created_at Date.new(2014, 7, 4)
+    f.published  false
+  end
+
+
   factory :blog_error, class: Blog do |f|
     f.author  { "Blog error" }
     f.title   { "Fake title" }

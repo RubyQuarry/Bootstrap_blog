@@ -16,10 +16,10 @@ class BlogsController < ApplicationController
 
   def search
     if params[:keyword] # keyword query
-      @blogs = @blogs.search(params[:keyword])
+      @blogs = @blogs.search(params[:keyword]).published
     elsif params[:month] && params[:year]   # archive query
       month = Date.new(params[:year].to_i, params[:month].to_i)
-      @blogs = @blogs.monthly(month)
+      @blogs = @blogs.monthly(month).published
     end
 
     render :index
@@ -67,7 +67,7 @@ class BlogsController < ApplicationController
   private
 
   def sort_blogs
-    @blogs = Blog.inorder.paginate(page: params[:page], per_page: 4)
+    @blogs = Blog.inorder.published.paginate(page: params[:page], per_page: 4)
   end
 
   def blog_params
