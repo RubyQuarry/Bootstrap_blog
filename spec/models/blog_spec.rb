@@ -30,13 +30,7 @@ RSpec.describe Blog, :type => :model do
     it 'should only return blogs in the same month' do
       expect(Blog.monthly(Date.new(2014, 7))).to eq [blog2]
     end
-
-
-
-
-
   end
-
 
 end
 
