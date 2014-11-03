@@ -23,4 +23,4 @@
     %h4 Archives
     %ol.list-unstyled
     - Blog.archive_months.each do |date|
-      %li = link_to( month_year_convertor(date), search_blogs_path(month: date[0], year: date[1]))
+      %li= link_to( month_year_convertor(date), search_blogs_path(month: date[0], year: date[1]))

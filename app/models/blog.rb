@@ -33,13 +33,13 @@ class Blog < ActiveRecord::Base
   class << self
 
     def all_keywords
-      Blog.inorder.inject([]) do |n, m|
+      Blog.inorder.published.inject([]) do |n, m|
         n.concat(m.keywords)
       end.uniq
     end
 
     def archive_months
-      Blog.inorder.map do |b|
+      Blog.inorder.published.map do |b|
         [b.created_at.month, b.created_at.year]
       end.uniq
     end
