@@ -26,6 +26,8 @@ class Blog < ActiveRecord::Base
 
   scope :monthly, ->(month) { where(created_at: month.all_month) }
 
+  scope :public_blogs, -> { Blog.inorder.published }
+
   validates :title, :author, :content, presence: true
 
 
@@ -39,7 +41,7 @@ class Blog < ActiveRecord::Base
     end
 
     def archive_months
-      Blog.inorder.published.map do |b|
+      Blog.public_blogs.map do |b|
         [b.created_at.month, b.created_at.year]
       end.uniq
     end

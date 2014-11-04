@@ -67,7 +67,7 @@ class BlogsController < ApplicationController
   private
 
   def sort_blogs
-    @blogs = Blog.inorder.published.paginate(page: params[:page], per_page: 4)
+    @blogs = Blog.public_blogs.paginate(page: params[:page], per_page: 4)
   end
 
   def blog_params
