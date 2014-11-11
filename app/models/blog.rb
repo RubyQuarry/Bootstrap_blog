@@ -36,7 +36,7 @@ class Blog < ActiveRecord::Base
 
     def all_keywords
       Blog.inorder.published.inject([]) do |n, m|
-        n.concat(m.keywords)
+        n.concat(m.keywords.map(&:downcase))
       end.uniq
     end
 

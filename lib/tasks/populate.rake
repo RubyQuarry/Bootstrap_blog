@@ -1,5 +1,5 @@
 namespace :db do
-  desc "Erase and fill database"
+  desc "Erase and fill database with mock data"
   task :populate => :environment do
     [Blog, Comment, Admin].each(&:delete_all)
 
