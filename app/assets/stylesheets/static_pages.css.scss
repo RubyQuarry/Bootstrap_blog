@@ -6,6 +6,30 @@
 @import url(//fonts.googleapis.com/css?family=Lato:400,900);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
+
+
+
+
+
+
+
+
+
+.contact{
+  ul {
+
+    li {
+      display: inline;
+      padding: 10px;
+      list-style-type: none;
+    }
+  }
+}
+
+
+
+
+
 .animate {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
