@@ -34,9 +34,6 @@ RSpec.describe Blog, :type => :model do
     it 'should work for archive months' do
         expect(Blog.archive_months).to eq []
     end
-
-
   end
-
 end
 
