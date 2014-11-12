@@ -61,7 +61,7 @@ class Blog < ActiveRecord::Base
     if keywords_changed? and keywords.is_a?(String)
       self.keywords = self.keywords.split(',').collect(&:strip).map do |key|
         key.scan(/[a-zA-Z]/).join
-      end
+      end.map(&:downcase)
     end
   end
 end
