@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
   def create
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(comment_params)
-    if @comment.save
-      CommentMailer.comment_email(@comment)
-    end
+    #if @comment.save
+    #  CommentMailer.comment_email(@comment)
+    #end
     respond_to do |format|
       format.html { render 'blogs/show' }
       format.js
