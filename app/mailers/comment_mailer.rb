@@ -4,8 +4,6 @@ class CommentMailer < ActionMailer::Base
 
   def comment_email(comment)
     @comment = comment
-    mail(subject:comment.email + "\n" + comment.name + "\n" + comment.text).deliver
+    mail(subject: comment.email + "\n" + comment.name + "\n" + comment.text).deliver
   end
-
-
 end

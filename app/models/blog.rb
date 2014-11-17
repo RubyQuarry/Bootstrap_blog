@@ -29,14 +29,7 @@ class Blog < ActiveRecord::Base
   scope :public_blogs, -> { Blog.inorder.published }
 
   validates :title, :author, :content, presence: true
-  Enumerator.new do |yielder|
-    count = 2 # 2  is the first prime number and where to start
-    yielder.yield count
-    loop do # loop in a ruby function that executes a block infinitely unless you break.
-      yielder << count if isprime?(count)  # You can use the << or .yield
-      count += 1
-    end
-  end
+  
 
   # class methods
   class << self
