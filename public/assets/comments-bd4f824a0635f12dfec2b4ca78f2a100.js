@@ -1,0 +1,1 @@
+(function(){var n,o,e;n=function(){return $(this).animate({backgroundColor:"#9dc6eb",borderRadius:"5px"})},o=function(){return $(this).animate({backgroundColor:"white",borderRadius:"0px"})},e=function(){return $("#comments  #wallmessages").hover(n,o)},$(document).ready(e),$(document).on("page:load",e)}).call(this);
