@@ -14,6 +14,7 @@ class BlogsController < ApplicationController
     @comments = @blog.comments.favorites
   end
 
+
   def search
     if params[:keyword] # keyword query
       @blogs = @blogs.search(params[:keyword]).published

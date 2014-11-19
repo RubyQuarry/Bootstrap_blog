@@ -29,7 +29,8 @@ class Blog < ActiveRecord::Base
   scope :public_blogs, -> { Blog.inorder.published }
 
   validates :title, :author, :content, presence: true
-  
+
+
 
   # class methods
   class << self
