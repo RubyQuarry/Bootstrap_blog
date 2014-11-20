@@ -36,14 +36,14 @@ class Blog < ActiveRecord::Base
   class << self
 
     def all_keywords
-      Blog.inorder.published.inject([]) do |n, m|
-        n.concat(m.keywords.map(&:downcase))
+      Blog.inorder.published.pluck(:keywords).inject([]) do |n, m|
+        n.concat(m.map(&:downcase))
       end.uniq
     end
 
     def archive_months
-      Blog.public_blogs.map do |b|
-        [b.created_at.month, b.created_at.year]
+      Blog.public_blogs.pluck(:created_at).map do |b|
+        [b.month, b.year]
       end.uniq
     end
 
