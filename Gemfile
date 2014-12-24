@@ -65,6 +65,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'guard-rspec'
+  gem 'capistrano-rails'
 end
 
 group :test do
@@ -82,3 +83,7 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+
+
+
