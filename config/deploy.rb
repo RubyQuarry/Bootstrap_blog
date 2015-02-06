@@ -2,11 +2,12 @@
 lock '3.1.0'
 
 set :application, 'app_name'
+set :deploy_user, 'root'
 set :repo_url, 'git@github.com:RubyQuarry/Bootstrap_blog.git'
 
-set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+
 set :rbenv_type, :system
-set :rbenv_ruby, '2.1.1'
+set :rbenv_ruby, '2.0.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 # Default branch is :master
@@ -49,18 +50,7 @@ set(:config_files, %w(
 
 set(:executable_config_files, %w(
   unicorn_init.sh
-
   ))
-
-set(:symlinks, [
-{
-source: "nginx.conf",
-link: "/etc/nginx/sites-enabled/#{full_app_name}"
-}, {
-link: "/etc/init.d/unicorn_#{full_app_name}" },
-  {
-    source: "log_rotation",
-link: "/etc/logrotate.d/#{full_app_name}" }, ])
 
 namespace :deploy do
 
