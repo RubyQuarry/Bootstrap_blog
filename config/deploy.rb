@@ -1,10 +1,10 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'Bootstrap_blog'
+set :application, 'app_name'
 set :repo_url, 'git@github.com:RubyQuarry/Bootstrap_blog.git'
 
-
+set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :rbenv_type, :system
 set :rbenv_ruby, '2.1.1'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"

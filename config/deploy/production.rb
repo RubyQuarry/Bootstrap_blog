@@ -13,13 +13,13 @@ role :web, %w{root@104.236.248.93}
 role :db,  %w{root@104.236.248.93}
 
 
-
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
+set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 server 'ajnorton.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 
