@@ -1,10 +1,9 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'app_name'
+set :application, 'Bootstrap_blog'
 set :deploy_user, 'root'
 set :repo_url, 'git@github.com:RubyQuarry/Bootstrap_blog.git'
-
 
 set :rbenv_type, :system
 set :rbenv_ruby, '2.0.0'
@@ -52,20 +51,30 @@ set(:executable_config_files, %w(
   unicorn_init.sh
   ))
 
+# set(:symlinks, [
+# {
+# source: "nginx.conf",
+# link: "/etc/nginx/sites-enabled/#{full_app_name}"
+# }, {
+# link: "/etc/init.d/unicorn_#{full_app_name}" },
+#   {
+#     source: "log_rotation",
+# link: "/etc/logrotate.d/#{full_app_name}" }, ])
+
 namespace :deploy do
 
   before :deploy, "deploy:check_revision"
 
   before :deploy, "deploy:run_tests"
 
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+ # after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
 
   after :finishing, 'deploy:cleanup'
 
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+#  before 'deploy:setup_config', 'nginx:remove_default_vhost'
 
 
-after 'deploy:setup_config', 'nginx:reload'
+  # after 'deploy:setup_config', 'nginx:reload'
 
  # Restart monit so it will pick up any monit configurations
  # we've added
