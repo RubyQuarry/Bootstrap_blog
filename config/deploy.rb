@@ -6,7 +6,7 @@ set :deploy_user, 'root'
 set :repo_url, 'git@github.com:RubyQuarry/Bootstrap_blog.git'
 
 set :rbenv_type, :system
-set :rbenv_ruby, '2.0.0'
+set :rbenv_ruby, '2.0.0-p598'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 # Default branch is :master
