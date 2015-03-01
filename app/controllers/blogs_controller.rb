@@ -56,13 +56,8 @@ class BlogsController < ApplicationController
 
   def destroy
     @blog.destroy
-    if @blog.destroyed?
-      flash[:success] = "deletion worked"
-      redirect_to :back
-    else
-      flash[:danger] = "deletion FAILED"
-      redirect_to :back
-    end
+    flash[:success] = "deletion worked"
+    redirect_to :back
   end
 
   private
