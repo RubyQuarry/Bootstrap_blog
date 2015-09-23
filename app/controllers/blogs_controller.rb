@@ -49,7 +49,7 @@ class BlogsController < ApplicationController
       flash[:success] = "Create Successful"
       redirect_to @blog
     else
-      flash[:danger] = "Create did not work"
+      flash[:danger] = "Create did not work: #{@blog.errors.full_messages.join(", ")}"
       redirect_to :back
     end
   end
